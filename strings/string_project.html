@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Manipulation Tool</title>
+    <script>
+        function updateOutput(value) {
+            document.getElementById("output").innerText = value;
+        }
+
+        function toUpperCase() {
+            let inputStr = document.getElementById("inputStr").value;
+            updateOutput(inputStr.toUpperCase());
+        }
+
+        function toLowerCase() {
+            let inputStr = document.getElementById("inputStr").value;
+            updateOutput(inputStr.toLowerCase());
+        }
+
+        function getLength() {
+            let inputStr = document.getElementById("inputStr").value;
+            updateOutput(inputStr.length);
+        }
+
+        function charAt() {
+            let inputStr = document.getElementById("inputStr").value;
+            let index = parseInt(document.getElementById("charAtIndex").value);
+            updateOutput(inputStr.charAt(index));
+        }
+
+        function indexOf() {
+            let inputStr = document.getElementById("inputStr").value;
+            let searchStr = document.getElementById("searchStr").value;
+            updateOutput(inputStr.indexOf(searchStr));
+        }
+
+        function trimString() {
+            let inputStr = document.getElementById("inputStr").value;
+            updateOutput(inputStr.trim());
+        }
+    </script>
+</head>
+<body>
+    <h1>String Manipulation Tool</h1>
+    <input type="text" id="inputStr" placeholder="Enter a string">
+    <br>
+    <button onclick="toUpperCase()">To Upper Case</button>
+    <button onclick="toLowerCase()">To Lower Case</button>
+    <button onclick="getLength()">Get Length</button>
+    <br>
+    <input type="number" id="charAtIndex" placeholder="Index for charAt">
+    <button onclick="charAt()">Get Char at Index</button>
+    <br>
+    <input type="text" id="searchStr" placeholder="String to search">
+    <button onclick="indexOf()">Get Index Of</button>
+    <br>
+    <button onclick="trimString()">Trim</button>
+    <p>Output: <span id="output"></span></p>
+</body>
+</html>
