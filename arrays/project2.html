@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <script>
+        let tasks = [];
+
+        function displayTasks() {
+            let taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            for (let task of tasks) {
+                let listItem = document.createElement("li");
+                listItem.innerText = task;
+                taskList.appendChild(listItem);
+            }
+        }
+
+        function addTask() {
+            let newTask = document.getElementById("newTask").value;
+            if (newTask) {
+                tasks.push(newTask);
+                displayTasks();
+                document.getElementById("newTask").value = "";
+            }
+        }
+
+        function removeTask() {
+            tasks.pop();
+            displayTasks();
+        }
+
+        window.onload = displayTasks;
+    </script>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <ul id="taskList"></ul>
+    <input type="text" id="newTask" placeholder="Enter task">
+    <button onclick="addTask()">Add Task</button>
+    <button onclick="removeTask()">Remove Last Task</button>
+</body>
+</html>
